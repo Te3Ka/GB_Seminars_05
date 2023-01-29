@@ -39,7 +39,21 @@ void PrintArray(int[] printArray)
     }
 }
 
+int FindElements(int min, int max, int[] findArray)
+{
+    int count = 0;
+    for (int i = 0; i < findArray.Length; i++)
+    {
+        if ((min <= findArray[i]) && (findArray[i] <= max))
+            count++;
+    }
+    return count;
+}
+
 Console.WriteLine("Программа генерирует массив случайных чисел от 0 до 999 в количестве 123 элемента.");
 Console.WriteLine("После производит подсчёт всех чисел в отрезке от 10 до 99");
 int[] array = GenerateArray();
 PrintArray(array);
+Console.WriteLine($"Количество элементов от 10 до 99 = {FindElements(10, 99, array)}");
+
+Author();
