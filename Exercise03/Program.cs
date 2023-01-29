@@ -19,10 +19,10 @@ void Author()
 int[] GenerateArray(int elements)
 {
     int[] newArray = new int[elements];
-    Random rand = new Random();
     for (int i = 0; i < newArray.Length; i++)
     {
-        newArray[i] = rand.Next(-9, 10);
+        Console.Write($"Введите {i + 1}-й элемент массива: ");
+        int.TryParse(Console.ReadLine(), out newArray[i]);
     }
     return newArray;
 }
@@ -49,7 +49,7 @@ string FindElement(int[] findArray, int findNumber)
     return "отсутствует";
 }
 
-Console.WriteLine("Программа генерирует случайный массив, а затем ищет в нём указанное число");
+Console.WriteLine("Программа запрашивает массив, а затем ищет в нём указанное число.");
 Console.Write("Введите количество элементов массива (больше 1): ");
 int.TryParse(Console.ReadLine(), out int num);
 {
